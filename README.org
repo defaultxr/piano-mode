@@ -2,6 +2,6 @@
 
 Piano-Mode is a minor mode for Emacs that turns your keyboard into a "piano" keyboard. It is modeled after the behavior of music trackers or digital audio workstations.
 
-Since (to the best of my knowledge) Emacs does not provide any way to differentiate between a user's keystrokes and OS-generated key repeat events, and doesn't expose key release events to Elisp at all, this mode uses the time between events to determine whether a key is still "pressed". Obviously, this is hackish, so expect glitchy behavior to occur sometimes. You may also want to tune the `piano-key-repeat-delay' and `piano-key-repeat-rate' variables to be based on your OS settings.
+Since (to the best of my knowledge) Emacs does not provide any way to differentiate between a user's keystrokes and OS-generated key repeat events, and doesn't expose key release events to Elisp at all, this mode uses the time between events to determine whether a key is still "pressed". Obviously, this is hackish, so expect glitchy behavior to occur sometimes. You may also want to tune the ~piano-key-repeat-delay~ and ~piano-key-repeat-rate~ variables to be based on your OS settings.
 
 Additionally, this will obviously only work if you're using a QWERTY keyboard layout.
