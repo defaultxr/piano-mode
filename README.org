@@ -1,7 +1,14 @@
-#+TITLE: piano-mode
+#+TITLE: Piano-Mode
 
-Piano-Mode is a minor mode for Emacs that turns your keyboard into a "piano" keyboard. It is modeled after the behavior of music trackers or digital audio workstations.
+Piano-Mode is a minor mode for Emacs that turns your keyboard into a "piano" keyboard.  It is modeled after the same behavior commonly included in music trackers or digital audio workstations.  Each "note on" (piano key press) event is sent to the function specified by the ~piano-key-down-function~ variable, and each "note off" is sent to the function specified by ~piano-key-up-function~.  See the included [[file:piano-cl-collider-example.el][piano-cl-collider-example.el]] for an example of functions that could be set for these variables.
 
-Since (to the best of my knowledge) Emacs does not provide any way to differentiate between a user's keystrokes and OS-generated key repeat events, and doesn't expose key release events to Elisp at all, this mode uses the time between events to determine whether a key is still "pressed". Obviously, this is hackish, so expect glitchy behavior to occur sometimes. You may also want to tune the ~piano-key-repeat-delay~ and ~piano-key-repeat-rate~ variables to be based on your OS settings.
+* Caveats
 
-Additionally, this will obviously only work if you're using a QWERTY keyboard layout.
+Since (to the best of my knowledge) Emacs does not provide any way to differentiate between a user's keystrokes and OS-generated key repeat events, and doesn't expose key release events to Elisp at all, this mode uses the time between events to determine whether a key is still "pressed".  Obviously, this is a very hacky solution, so expect glitchy behavior to occur sometimes.  You may want to tune the ~piano-key-repeat-delay~ and ~piano-key-repeat-rate~ variables based on your OS settings.
+
+Right now, this will only work if you're using a QWERTY keyboard layout, but you can edit ~piano-ascii-to-note-translation-table~ to match your keyboard layout.  (Pull requests for alternate layouts are welcome!)
+
+* TODO:
+- "mono mode"
+- record mode
+- better heuristic for note auto-release; take into account whether the key is "repeating" or not.
