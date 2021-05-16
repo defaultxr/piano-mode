@@ -31,7 +31,7 @@
 ;; "note on" (piano key press) event is sent to the function specified
 ;; by the `piano-key-down-function' variable, and each "note off" is
 ;; sent to the function specified by `piano-key-up-function'.  See the
-;; included "piano-cl-collider-example.el" for an example of functions
+;; included "piano-mode-cl-collider.el" for an example of functions
 ;; that could be set for these variables.
 
 ;; Since (to the best of my knowledge) Emacs does not provide any way
