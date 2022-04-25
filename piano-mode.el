@@ -188,6 +188,12 @@ The function is passed one argument: a MIDI note number."
     (unless same-note
       (piano-run-timer))))
 
+(defun piano-panic ()
+  "Release all notes (useful in case of stuck notes)."
+  (interactive)
+  (dotimes (note 128)
+    (piano-release note)))
+
 (defvar piano-mode-map
   (let ((m (make-keymap)))
     (mapc (lambda (x) (define-key m x 'piano-play-key)) '("z" "s" "x" "d" "c" "v" "g" "b" "h" "n" "j" "m" "," "l" "." ";" "/" "q" "2" "w" "3" "e" "r" "5" "t" "6" "y" "7" "u" "i" "9" "o" "0" "p" "[" "=" "]"))
