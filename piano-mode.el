@@ -211,6 +211,7 @@ The function is passed one argument: a MIDI note number."
     m)
   "Keymap for `piano-mode'.")
 
+;;;###autoload
 (define-minor-mode piano-mode
   "Toggle Piano Mode.
 Interactively with no argument, this command toggles the mode.  A
