@@ -214,10 +214,6 @@ The function is passed one argument: a MIDI note number."
 ;;;###autoload
 (define-minor-mode piano-mode
   "Toggle Piano Mode.
-Interactively with no argument, this command toggles the mode.  A
-positive prefix argument enables the mode, any other prefix
-argument disables it.  From Lisp, argument omitted or nil enables
-the mode, `toggle' toggles the state.
 
 When Piano Mode is enabled, your computer keyboard acts as a
 piano keyboard.  Each key is mapped to `piano-play-key', which
